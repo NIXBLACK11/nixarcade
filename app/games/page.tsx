@@ -14,7 +14,6 @@ export default function Games() {
         >
             <GrainOverlay />
             <Navbar />
-            
         </div>
     )
 }
