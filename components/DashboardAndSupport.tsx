@@ -4,6 +4,7 @@ import React from 'react';
 import { StatCard } from './ui/StatCard';
 import { CompanyCard } from './ui/CompanyCard';
 import { Footer } from './ui/Footer';
+import { TestimonialsSection } from './ui/TestimonialSection';
 
 const UserIcon = () => (
     <svg viewBox="0 0 24 24" className="h-4 w-4 text-[#6A1B9A]" fill="currentColor">
@@ -106,6 +107,7 @@ export const DashboardAndSupport = () => {
                             <CompanyCard key={index} {...company} />
                         ))}
                     </div>
+                    <TestimonialsSection />
                 </div>
             </div>
             <Footer />

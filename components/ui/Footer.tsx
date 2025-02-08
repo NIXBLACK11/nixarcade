@@ -3,12 +3,9 @@ import { MdArrowOutward } from 'react-icons/md';
 
 export const Footer = () => {
 	const navigation = [
-		{ name: 'Ideas', href: 'https://nextjs.org/' },
-		{ name: 'VCs & Funds', href: '/funds' },
-		{ name: 'Grants', href: '/grants' },
-		{ name: 'Bounties', href: '/bounties' },
-		{ name: 'Jobs', href: '/jobs' },
-		{ name: 'Support', href: '/support' }
+		{ name: 'Support', href: 'https://t.me/NIXARCADE' },
+		{ name: 'X', href: 'https://x.com/NIXARCADE' },
+		{ name: 'GitHub', href: 'https://github.com/NIXBLACK11/Nixarcade' },
 	];
 
 	return (
