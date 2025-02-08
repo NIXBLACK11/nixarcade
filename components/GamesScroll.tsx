@@ -1,18 +1,11 @@
 "use client"
 
-import { useMotionValueEvent, useScroll } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useRef, useState } from "react";
 import { FaGithub, FaTwitter } from "react-icons/fa";
 import { GrAndroid } from "react-icons/gr";
-
-const GrainOverlay = () => (
-    <div
-        className="pointer-events-none fixed inset-0 opacity-20"
-        style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-        }}
-    />
-);
+import { useRouter } from 'next/navigation';
+import { GrainOverlay } from "./ui/GrainOverlay";
 
 export const GameScroll = () => {
     const games = [
@@ -58,6 +51,7 @@ export const GameScroll = () => {
         },
     ];
 
+    const router = useRouter();
     const containerRef = useRef<HTMLDivElement>(null);
     const [currentGame, setCurrentGame] = useState(games[0]);
 
@@ -108,14 +102,14 @@ export const GameScroll = () => {
                                 }
                             />
                         </div>
-                        <div className="flex items-center justify-center">
+                        <motion.div className="flex items-center justify-center bg-[#6A1B9A] rounded-full p-2" whileHover={{ scale: 0.9 }}>
                             <div
-                                className="text-white hover:text-[#FF4081] text-3xl font-custom underline"
-                                onClick={() => window.open("https://nixarcade.fun/blinks", "_blank")}
+                                className="text-white text-3xl font-custom"
+                                onClick={() => router.push("/games")}
                             >
-                                Games on Blinks
+                                Go to games
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
                     <div className="w-full h-full flex justify-center items-center">
                         <img src={currentGame.logo} className="img-hover" width={500} alt="Logo" />
