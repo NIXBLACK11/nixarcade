@@ -49,7 +49,7 @@ export const blinks = [
         name: "QWERTY",
         description: "A speed game that challenges your typing skills.",
         players: "2",
-        link: "https://example.com/blink1",
+        link: "https://dial.to/?action=solana-action%3Ahttps%3A%2F%2Fqwerty.nixblack.site%2Fapi%2Factions%2Fcreate-game&cluster=devnet",
     },
     {
         id: "roulette",
@@ -57,6 +57,6 @@ export const blinks = [
         name: "Roulette",
         description: "Spin the wheel and test your luck in this classic casino game.",
         players: "2",
-        link: "https://example.com/blink2",
+        link: "https://dial.to/?action=solana-action:https://roulette.nixblack.site/api/actions/create-roulette&cluster=devnet",
     },
 ];

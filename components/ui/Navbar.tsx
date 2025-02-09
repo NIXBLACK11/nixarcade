@@ -21,7 +21,7 @@ export const Navbar = () => {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: "spring", duration: 0.8 }}
-                className="bg-neutral-900 w-[90%] md:w-[80%] h-[67%] rounded-full shadow-lg shadow-neutral-600 backdrop-blur-lg bg-opacity-95"
+                className="bg-neutral-900 bg-opacity-25 w-fit md:w-[80%] h-auto md:h-[67%] rounded-full shadow-lg shadow-neutral-600 backdrop-blur-lg py-2 px-4 md:py-0 md:px-0"
             >
                 <div className="h-full px-6 flex items-center">
                     <div className="hidden md:flex w-full items-center justify-between">
@@ -62,7 +62,7 @@ export const Navbar = () => {
                         </div>
                     </div>
 
-                    <div className="md:hidden w-full flex justify-center">
+                    <div className="md:hidden flex justify-center">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             className="px-6 py-2 bg-white text-neutral-900 rounded-full font-medium hover:bg-[#FF4081] hover:text-white transition-colors duration-200"
