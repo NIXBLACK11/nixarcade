@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useAppKit, useAppKitAccount } from '@reown/appkit/react'
+import { FaWallet } from 'react-icons/fa';
 
 export const Navbar = () => {
     const navigation = [
@@ -9,6 +11,9 @@ export const Navbar = () => {
         { name: 'Blinks', href: '/funds' },
         { name: 'Submit Idea', href: '/grants' },
     ];
+
+    const { open } = useAppKit();
+    const { isConnected } = useAppKitAccount();
 
     return (
         <div className="fixed top-0 z-50 w-screen h-[15vh] flex justify-center items-center">
@@ -23,7 +28,7 @@ export const Navbar = () => {
                         whileHover={{ scale: 1.05 }}
                         className="flex items-center space-x-2"
                     >
-                        <img className="w-8 h-8 rounded-md" src="mainlogo.png"/>
+                        <img className="w-8 h-8 rounded-md" src="mainlogo.png" />
                         <span className="text-white font-bold text-xl hidden sm:block anime-font">NIXARCADE</span>
                     </motion.div>
 
@@ -51,8 +56,14 @@ export const Navbar = () => {
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             className="hidden md:block px-6 py-2 bg-white text-neutral-900 rounded-full font-medium hover:bg-[#FF4081] hover:text-white transition-colors duration-200"
+                            onClick={() => {
+                                open();
+                            }}
                         >
-                            Connect wallet
+                            {isConnected ?
+                                <FaWallet /> :
+                                "Connect Wallet"
+                            }
                         </motion.button>
                     </div>
                 </div>
