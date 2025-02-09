@@ -3,6 +3,7 @@ import GameGrid from "@/components/GameGrid";
 import { Footer } from "@/components/ui/Footer";
 import { GrainOverlay } from "@/components/ui/GrainOverlay";
 import { Navbar } from "@/components/ui/Navbar";
+import { SubmitIdea } from "@/components/ui/SubmitIdea";
 
 export default function Games() {
     return (
@@ -17,11 +18,26 @@ export default function Games() {
         >
             <GrainOverlay />
             <Navbar />
-            <h1 className="pt-32 pb-6 text-4xl font-bold text-black text-center anime-font">Games</h1>
-            <GameGrid />
-            <h1 className="pt-8 pb-6 text-4xl font-bold text-black text-center anime-font">Blinks</h1>
-            <BlinksGrid />
-            <div className="h-[10vh] w-full"></div>
+            <section id="games" className="pt-32 pb-6">
+                <h1 className="text-4xl font-bold text-black text-center anime-font">
+                    Games
+                </h1>
+                <GameGrid />
+            </section>
+
+            <section id="blinks" className="pt-8 pb-6">
+                <h1 className="text-4xl font-bold text-black text-center anime-font">
+                    Blinks
+                </h1>
+                <BlinksGrid />
+            </section>
+
+            <section id="submit-idea" className="pt-8 pb-6">
+                <h1 className="text-4xl font-bold text-black text-center anime-font">
+                    Submit Idea
+                </h1>
+                <SubmitIdea />
+            </section>
             <Footer />
         </div>
     )

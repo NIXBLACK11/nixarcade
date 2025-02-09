@@ -7,9 +7,9 @@ import { FaWallet } from 'react-icons/fa';
 
 export const Navbar = () => {
     const navigation = [
-        { name: 'Games', href: '/ideas' },
-        { name: 'Blinks', href: '/funds' },
-        { name: 'Submit Idea', href: '/grants' },
+        { name: 'Games', href: '#games' },
+        { name: 'Blinks', href: '#blinks' },
+        { name: 'Submit Idea', href: '#submit-idea' },
     ];
 
     const { open } = useAppKit();
@@ -49,7 +49,8 @@ export const Navbar = () => {
                         <div className="flex items-center space-x-4">
                             <motion.button
                                 whileHover={{ scale: 1.02 }}
-                                className="px-6 py-2 bg-white text-neutral-900 rounded-full font-medium hover:bg-[#FF4081] hover:text-white transition-colors duration-200"
+                                whileTap={{ scale: 0.98 }}
+                                className="px-6 py-2 bg-[#6A1B9A] hover:bg-[#FF4081] text-white rounded-full font-medium transition-colors duration-200"
                                 onClick={() => {
                                     open();
                                 }}
@@ -65,7 +66,8 @@ export const Navbar = () => {
                     <div className="md:hidden flex justify-center">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
-                            className="px-6 py-2 bg-white text-neutral-900 rounded-full font-medium hover:bg-[#FF4081] hover:text-white transition-colors duration-200"
+                            whileTap={{ scale: 0.98 }}
+                            className="px-6 py-2 bg-[#6A1B9A] hover:bg-[#FF4081] text-neutral-900 rounded-full font-medium hover:text-white transition-colors duration-200"
                             onClick={() => {
                                 open();
                             }}

@@ -4,6 +4,7 @@
 
 html {
 	font-family: var(--font-geist-sans), sans-serif;
+	scroll-behavior: smooth;
 }
 
 body {

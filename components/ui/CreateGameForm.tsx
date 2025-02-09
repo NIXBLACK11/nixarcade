@@ -10,7 +10,7 @@ export const CreateGameForm: React.FC<{ onBack: () => void, id: string, gameName
     maxPlayers,
 }) => {
     const [playersCount, setPlayersCount] = useState(minPlayers);
-    const [onePlayerBid, setOnePlayerBid] = useState(1);
+    const [onePlayerBid, setOnePlayerBid] = useState(0);
     const [gameCode, setGameCode] = useState("");
 
     const handleCreateGame = () => {
