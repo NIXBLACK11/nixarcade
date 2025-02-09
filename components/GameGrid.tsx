@@ -13,7 +13,7 @@ export const GameGrid = () => {
     const [joinType, setJoinType] = useState<string | null>(null);
 
     return (
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 py-32 max-w-screen">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 px-10 max-w-screen">
             <AnimatePresence mode="wait">
                 {games.map((game) =>
                     creatingGame === game.id ? (

@@ -40,18 +40,23 @@ export const games = [
     //     description: "Outthink and outplay in the ultimate strategy game.",
     //     players: "2",
     // },
-    // {
-    //     id: "qwerty",
-    //     logo: "qwerty.png",
-    //     title: "QWERTY",
-    //     description: "A speed game that challenges your typing skills.",
-    //     players: "1+",
-    // },
-    // {
-    //     id: "roulette",
-    //     logo: "roulette.png",
-    //     title: "ROULETTE",
-    //     description: "Spin the wheel and test your luck in this classic casino game.",
-    //     players: "1+",
-    // },
+];
+
+export const blinks = [
+    {
+        id: "qwerty",
+        logo: "qwerty.png",
+        name: "QWERTY",
+        description: "A speed game that challenges your typing skills.",
+        players: "2",
+        link: "https://example.com/blink1",
+    },
+    {
+        id: "roulette",
+        logo: "roulette.png",
+        name: "Roulette",
+        description: "Spin the wheel and test your luck in this classic casino game.",
+        players: "2",
+        link: "https://example.com/blink2",
+    },
 ];
