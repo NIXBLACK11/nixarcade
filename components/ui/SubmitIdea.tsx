@@ -31,7 +31,7 @@ export const SubmitIdea = () => {
                     </h2>
 
                     <p className="text-neutral-300 max-w-lg mx-auto">
-                        Have an awesome game idea? We'd love to hear it! Connect with us on X (Twitter) to share your vision and join our gaming community.
+                        {`Have an awesome game idea? We'd love to hear it! Connect with us on X (Twitter) to share your vision and join our gaming community.`}
                     </p>
 
                     <motion.button
