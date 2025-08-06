@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useAppKit, useAppKitAccount } from '@reown/appkit/react'
-import { FaWallet } from 'react-icons/fa';
+import { WalletMultiButton } from "@solana/wallet-adapter-react-ui";
 
 export const Navbar = () => {
     const navigation = [
@@ -11,9 +10,6 @@ export const Navbar = () => {
         { name: 'Blinks', href: '#blinks' },
         { name: 'Submit Idea', href: '#submit-idea' },
     ];
-
-    const { open } = useAppKit();
-    const { isConnected } = useAppKitAccount();
 
     return (
         <div className="fixed top-0 z-50 w-screen h-[15vh] flex justify-center items-center">
@@ -47,36 +43,12 @@ export const Navbar = () => {
                         </nav>
 
                         <div className="flex items-center space-x-4">
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="px-6 py-2 bg-[#6A1B9A] hover:bg-[#FF4081] text-white rounded-full font-medium transition-colors duration-200"
-                                onClick={() => {
-                                    open();
-                                }}
-                            >
-                                {isConnected ?
-                                    <FaWallet /> :
-                                    "Connect Wallet"
-                                }
-                            </motion.button>
+                            <WalletMultiButton />
                         </div>
                     </div>
 
                     <div className="md:hidden flex justify-center">
-                        <motion.button
-                            whileHover={{ scale: 1.02 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="px-6 py-2 bg-[#6A1B9A] hover:bg-[#FF4081] text-neutral-900 rounded-full font-medium hover:text-white transition-colors duration-200"
-                            onClick={() => {
-                                open();
-                            }}
-                        >
-                            {isConnected ?
-                                <FaWallet /> :
-                                "Connect Wallet"
-                            }
-                        </motion.button>
+                        <WalletMultiButton />
                     </div>
                 </div>
             </motion.div>
