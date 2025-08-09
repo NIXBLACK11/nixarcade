@@ -1,0 +1,246 @@
+{
+  "address": "2bTvcg86gf1M8QbGaF9Xqtx3YCyNQzYCeGjMeNXaTF2q",
+  "metadata": {
+    "name": "game_wager",
+    "version": "0.1.0",
+    "spec": "0.1.0",
+    "description": "Created with Anchor"
+  },
+  "instructions": [
+    {
+      "name": "end_game",
+      "discriminator": [
+        224,
+        135,
+        245,
+        99,
+        67,
+        175,
+        121,
+        252
+      ],
+      "accounts": [
+        {
+          "name": "signer",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "winner",
+          "writable": true
+        },
+        {
+          "name": "game_account",
+          "writable": true
+        },
+        {
+          "name": "first_player",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "game_code",
+          "type": "u8"
+        },
+        {
+          "name": "game_type",
+          "type": "u8"
+        },
+        {
+          "name": "winner",
+          "type": "pubkey"
+        }
+      ]
+    },
+    {
+      "name": "initialize_game",
+      "discriminator": [
+        44,
+        62,
+        102,
+        247,
+        126,
+        208,
+        130,
+        215
+      ],
+      "accounts": [
+        {
+          "name": "first_player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game_account",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "game_code",
+          "type": "u8"
+        },
+        {
+          "name": "game_type",
+          "type": "u8"
+        },
+        {
+          "name": "wager",
+          "type": "u64"
+        },
+        {
+          "name": "num_players",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "join_game",
+      "discriminator": [
+        107,
+        112,
+        18,
+        38,
+        56,
+        173,
+        60,
+        128
+      ],
+      "accounts": [
+        {
+          "name": "player",
+          "writable": true,
+          "signer": true
+        },
+        {
+          "name": "game_account",
+          "writable": true
+        },
+        {
+          "name": "system_program",
+          "address": "11111111111111111111111111111111"
+        }
+      ],
+      "args": [
+        {
+          "name": "game_code",
+          "type": "u8"
+        },
+        {
+          "name": "game_type",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "Game",
+      "discriminator": [
+        27,
+        90,
+        166,
+        125,
+        74,
+        100,
+        121,
+        18
+      ]
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidAmount",
+      "msg": "Invalid amount"
+    },
+    {
+      "code": 6001,
+      "name": "GameAlreadyFull",
+      "msg": "Game is already full"
+    },
+    {
+      "code": 6002,
+      "name": "PlayerAlreadyJoined",
+      "msg": "Player has already joined this game"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidGameType",
+      "msg": "Invalid game type"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidWinner",
+      "msg": "Invalid winner"
+    },
+    {
+      "code": 6005,
+      "name": "GameDataMismatch",
+      "msg": "Invalid game data provided in final instruction"
+    },
+    {
+      "code": 6006,
+      "name": "InvaildNumberPlayers",
+      "msg": "Invalid number of players"
+    },
+    {
+      "code": 6007,
+      "name": "FirstPlayerMismatch",
+      "msg": "First player account does not match game creator"
+    },
+    {
+      "code": 6008,
+      "name": "NotAuthorized",
+      "msg": "This account is not authorized to close the game"
+    }
+  ],
+  "types": [
+    {
+      "name": "Game",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "player_index",
+            "type": "u8"
+          },
+          {
+            "name": "num_players",
+            "type": "u8"
+          },
+          {
+            "name": "players",
+            "type": {
+              "array": [
+                "pubkey",
+                4
+              ]
+            }
+          },
+          {
+            "name": "wager",
+            "type": "u64"
+          },
+          {
+            "name": "game_type",
+            "type": "u8"
+          },
+          {
+            "name": "game_code",
+            "type": "u8"
+          }
+        ]
+      }
+    }
+  ]
+}

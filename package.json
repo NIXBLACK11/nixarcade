@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
     "@reown/appkit": "^1.6.7",
     "@reown/appkit-adapter-solana": "^1.6.7",
     "@solana/wallet-adapter-base": "^0.9.27",

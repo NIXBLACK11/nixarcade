@@ -24,7 +24,7 @@ export const games = [
         description: "Climb the ladders, avoid the snakes, and win the race!",
         players: "2-4",
         minPlayers: 2,
-        maxPlayers: 2
+        maxPlayers: 4
     },
     // {
     //     id: "monopoly",

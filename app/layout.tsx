@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { SolanaProvider } from "@/provider/SolanaProvider";
+import { NotificationProvider } from "@/provider/NotificationProvider";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -28,9 +29,11 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<SolanaProvider>
-					{children}
-				</SolanaProvider>
+				<NotificationProvider>
+					<SolanaProvider>
+						{children}
+					</SolanaProvider>
+				</NotificationProvider>
 			</body>
 		</html>
 	);
